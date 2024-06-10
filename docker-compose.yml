@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+   application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eureka-service-ms:1.1
+    ports:
+      - '8761:8761'
+
+
