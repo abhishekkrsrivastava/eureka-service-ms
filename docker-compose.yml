@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: eureka-service-ms:1.2
+    image: eureka-service-ms:0.1
     ports:
       - '8761:8761'
 

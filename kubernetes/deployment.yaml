@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-service-ms-deployment
+  namespace: eureka-service-ms-namespace
+spec:
+  selector:
+    matchLabels:
+      app: eureka-deployment
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: eureka-deployment
+    spec:
+      containers:
+        - name: eureka-app-container
+          image: abhishekvanaras/eureka-service-ms:2.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8761
